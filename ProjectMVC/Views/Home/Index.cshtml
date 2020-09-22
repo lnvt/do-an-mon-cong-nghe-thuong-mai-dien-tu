@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+    var listproduct = (List<Model.EF.Product>)ViewBag.Newproduct;
+}
+@section slide
+{
+    <div class="header_slide">
+        <div class="header_bottom_left">
+            <div class="categories">
+                @{Html.RenderAction("ProductCategory", "Product"); }
+            </div>
+        </div>
+        <div class="header_bottom_right">
+            <div class="slider">
+                <div id="slider">
+                    <div id="mover">
+                        <div id="slide-1" class="slide">
+                            <div class="slider-img">
+                                <a href="/"><img src="~/Picture/slide3.jpg" /></a>
+                            </div>
+                            <div class="slider-text" style="color:gainsboro">
+                                <p style="font-size:30px; color:red; font-weight:bold">GIẢM GIÁ SỐC LÊN ĐẾN</p>
+                                <p style="font-size:40px; color:red; font-weight:bold">20%</p>
+                                <div class="features_list">
+                                    <h4>Hãy mua cho mình 1 ly trà sữa để thưởng thức vị ngon!</h4>
+                                    <a href="#" class="btn btn-success">Mua ngay</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="slider-text" style="color:gainsboro">
+                                <p style="font-size:30px; color:red; font-weight:bold">GIẢM GIÁ SỐC LÊN ĐẾN</p>
+                                <p style="font-size:40px; color:red; font-weight:bold">20%</p>
+                                <div class="features_list">
+                                    <h4>Hãy mua cho mình 1 ly trà sữa để thưởng thức vị ngon!</h4>
+                                    <a href="#" class="btn btn-success">Mua ngay</a>
+                                </div>
+                            </div>
+                            <div class="slider-img">
+                                <a href="#"><img src="~/Picture/slide1.jpg" height="350" /></a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="slider-img">
+                                <a href="#"><img src="~/Picture/slide2.jpg" height="350" /></a>
+                            </div>
+
+                            <div class="slider-text" style="color:gainsboro">
+                                <p style="font-size:30px; color:red; font-weight:bold">GIẢM GIÁ SỐC LÊN ĐẾN</p>
+                                <p style="font-size:40px; color:red; font-weight:bold">20%</p>
+                                <div class="features_list">
+                                    <h4>Hãy mua cho mình 1 ly trà sữa để thưởng thức vị ngon!</h4>
+                                    <a href="#" class="btn btn-success">Mua ngay</a>
+
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+}
+<div class="content">
+    <div class="content_top">
+        <div class="heading">
+            <h3>Các nước uống tại quán</h3>
+        </div>
+        <div class="see">
+            <p><a href="xem-tat-ca">Xem danh sách trà sữa tại quán(*)</a></p>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="section group">
+        @foreach (var item in listproduct) // sử dụng viewbag
+        {
+            var url = "/chi-tiet/" + @item.MetaTitle + "-" + @item.ID; // tạo link cho từng 1 sản phẩm
+            <div class="grid_1_of_4 images_1_of_4">
+                <a href="@url"><img src="@item.Images" alt="@item.Name" style="width:242px;height:268px" /></a>
+                <h2>@item.Name</h2>
+                <div class="price-details">
+                    <div class="price-number">
+
+                            <!--<p><span class="rupees">@(item.Price.HasValue?item.Price.Value.ToString("0"+" "+"đồng"):"Chưa có giá")</span></p>-->
+                            @if (item.PromotionPrice.HasValue)
+                            {
+                        <p><span class="rupees"><del>@item.Price.Value.ToString("0" + " " + "đồng" + " ")</del>@item.PromotionPrice.Value.ToString("0" + " " + "đồng")</span></p>
+                    }
+                    else
+                    {
+                        <p><span class="rupees">@(item.Price.HasValue ? item.Price.Value.ToString("0" + " " + "đồng") : "Chưa có giá")</span></p>
+                    }
+</div>
+<div class="add-cart">
+    <h4><a href="/them-gio-hang?productId=@item.ID&quantity=1">Thêm vào giỏ</a></h4>
+</div>
+<div class="clear"></div>
+</div>
+
+</div>
+}
+
+
+    </div>
+    <div class="content_bottom">
+        <div class="heading">
+            <h3>Trà sữa đang giảm giá</h3>
+        </div>
+        <div class="see">
+            <p><a href="xem-tat-ca">Xem danh sách trà sữa giảm giá</a></p>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="section group">
+        @foreach (var item in listproduct) // sử dụng viewbag
+        {
+            var url = "/chi-tiet/" + @item.MetaTitle + "-" + @item.ID; // tạo link cho từng 1 sản phẩm
+            <div class="grid_1_of_4 images_1_of_4">
+                <a href="@url"><img src="@item.Images" alt="@item.Name" style="width:242px;height:268px" /></a>
+                <h2>@item.Name</h2>
+                <div class="price-details">
+                    <div class="price-number">
+
+                            <!--<p><span class="rupees">@(item.Price.HasValue?item.Price.Value.ToString("0"+" "+"đồng"):"Chưa có giá")</span></p>-->
+                            @if (item.PromotionPrice.HasValue)
+                            {
+                        <p><span class="rupees"><del>@item.Price.Value.ToString("0" + " " + "đồng" + " ")</del>@item.PromotionPrice.Value.ToString("0" + " " + "đồng")</span></p>
+                    }
+                    else
+                    {
+                        <p><span class="rupees">@(item.Price.HasValue ? item.Price.Value.ToString("0" + " " + "đồng") : "Chưa có giá")</span></p>
+                    }
+</div>
+<div class="add-cart btn-group-sm ">
+    <h4 style="border-radius: 20px; color: aqua;background-color: aquamarine">
+        <a href="/them-gio-hang?productId=@item.ID&quantity=1">Thêm vào giỏ</a>
+    </h4>
+</div>
+<div class="clear"></div>
+</div>
+
+</div>
+}
+
+
+    </div>
+</div>
+

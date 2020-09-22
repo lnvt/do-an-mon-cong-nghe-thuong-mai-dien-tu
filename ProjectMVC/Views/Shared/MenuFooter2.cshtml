@@ -1,0 +1,91 @@
+﻿@model List<Model.EF.Menu>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .footer1 {
+            width: 100%;
+            float: left;
+            border-top: 2px solid red;
+            background-color: lightgrey;
+            box-shadow: 1px -1px 1px 1px yellow;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: white;
+        }
+
+        .col-3 {
+            width: 23%;
+            float: left;
+            margin: 0 1%;
+        }
+
+        .footer22 ul span li {
+            padding-top: 10px;
+        }
+
+        .footer22 p {
+            padding-top: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="footer1">
+        <div class="container">
+            <div class="col-3">
+                <div class="footer22">
+                    <p style="font-size:25px;font-weight:bold">HỖ TRỢ</p>
+                    <ul>
+                        @foreach (var item in Model)
+                        {
+                            <span><li> <a href="@item.Link" target="@item.Target">@item.Text</a></li></span>
+                        }
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-3">
+                <p style="font-size:25px;font-weight:bold">LƯỢT TRUY CẬP</p>
+                <p style="font-size:20px;font-weight:200;">
+                    Số lượt truy cập bằng ứng dụng trình duyệt khác nhau:@AppState["Count"]
+            </div>
+            <div class="col-3">
+                <p style="font-size:25px;font-weight:bold">THÔNG TIN</p>
+                <p style="font-size:20px;font-weight:200;">ORDER TEAMILK</p>
+                Địa chỉ: 331 Quốc lộ 1A Quận 12, TPHCM
+            </div>
+            <div class="col-3">
+                <p style="font-size:25px;font-weight:bold">HÌNH ẢNH</p>
+                <img src="~/Picture/facebook.png" style="font-size:12px" />
+                fb.com/orderteamilk <br />
+                <img src="~/Picture/group.png" style="font-size:12px" />
+                fb.com/group_Teamilk<br />
+                <img src="~/Picture/youtube.com.png" style="font-size:20px">
+                youtube.com/orderteamilk<br />
+                <p style="font-size:20px">Hoặc liên lạc: <br />0123-456-789</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

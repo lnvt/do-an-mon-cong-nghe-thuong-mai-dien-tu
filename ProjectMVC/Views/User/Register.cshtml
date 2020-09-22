@@ -1,0 +1,43 @@
+﻿@model ProjectMVC.Models.Register
+@{
+    ViewBag.Title = "Đăng kí";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<p style="color:red; font-size:19px; font-family:'Times New Roman'">ĐĂNG KÍ THÀNH VIÊN</p>
+<div class="content">
+    @Html.ValidationSummary(true)
+    @using (Html.BeginForm("Register", "User", FormMethod.Post))
+    {
+        <div>Tên đăng nhập</div>
+        @Html.TextBoxFor(m => m.UserName);
+        <p style="color:red">@Html.ValidationMessageFor(m => m.UserName)</p>
+
+        <div>Mật khẩu</div>
+        @Html.TextBoxFor(m => m.Password);
+        <p style="color:red"> @Html.ValidationMessageFor(m => m.Password)</p>
+
+        <div>Xác nhận mật khẩu</div>
+        @Html.TextBoxFor(m => m.ConfirmPassword);
+        <p style="color:red">@Html.ValidationMessageFor(m => m.ConfirmPassword)</p>
+
+        <div>Họ và tên: </div>
+        @Html.TextBoxFor(m => m.Name);
+        <p style="color:red">@Html.ValidationMessageFor(m => m.Name)</p>
+
+        <div>Địa chỉ: </div>
+        @Html.TextBoxFor(m => m.Address);
+        <p style="color:red">@Html.ValidationMessageFor(m => m.Address)</p>
+
+        <div>Email: </div>
+        @Html.TextBoxFor(m => m.Email);
+        <p style="color:red">@Html.ValidationMessageFor(m => m.Email)</p>
+
+        <div>Số điện thoại: </div>
+        @Html.TextBoxFor(m => m.Phone);
+        <p style="color:red">@Html.ValidationMessageFor(m => m.Phone)</p>
+        <br />
+        <input type="submit" value="Đăng kí" />
+        }
+</div>
+

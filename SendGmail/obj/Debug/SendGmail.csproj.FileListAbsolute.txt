@@ -1,0 +1,6 @@
+D:\MVC\ProjectMVC\SendGmail\bin\Debug\SendGmail.dll
+D:\MVC\ProjectMVC\SendGmail\bin\Debug\SendGmail.pdb
+D:\MVC\ProjectMVC\SendGmail\obj\Debug\SendGmail.csproj.CoreCompileInputs.cache
+D:\MVC\ProjectMVC\SendGmail\obj\Debug\SendGmail.dll
+D:\MVC\ProjectMVC\SendGmail\obj\Debug\SendGmail.pdb
+D:\MVC\ProjectMVC\SendGmail\obj\Debug\SendGmail.csprojAssemblyReference.cache

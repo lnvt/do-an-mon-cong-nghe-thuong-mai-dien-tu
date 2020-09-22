@@ -1,0 +1,101 @@
+﻿<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Free Home Shoppe Website Template | Home :: w3layouts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Assets/Client/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Assets/Client/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/Assets/Client/css/bootstrap-theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link href="~/Assets/Client/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Assets/Client/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/Assets/Client/js/controller/baseController.js"></script>
+    <script src="~/Assets/Client/js/jquery-1.11.3.min.js"></script>
+    <script src="~/Assets/Client/js/jquery-ui.js"></script>
+    <script src="~/Assets/Client/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Assets/Client/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Assets/Client/js/easing.js"></script>
+    <script type="text/javascript" src="~/Assets/Client/js/startstop-slider.js"></script>
+    <script type="text/javascript" src="~/Assets/Client/js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="~/Assets/Client/js/Test.js"></script>
+    <link rel="shortcut icon" href="~/Picture/group.png" />
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="headertop_desc">
+                <marquee direction="left" @*behavior="alternate"*@>
+                    <p style="color:#f74747; font-weight:bold; font-size:25px">CHÀO MỪNG BẠN ĐẾN VỚI ORDER TEAMILK TRỰC TUYẾN!</p>
+                </marquee>
+            </div>
+            <div class="header_top">
+                <div class="logo">
+                    <img src="~/Picture/logomvc.png" width="250" height="150"/>
+                </div>
+                @{Html.RenderAction("HeaderCart", "Home");}
+                <script type="text/javascript">
+                    function DropDown(el) {
+                        this.dd = el;
+                        this.initEvents();
+                    }
+                    DropDown.prototype = {
+                        initEvents: function () {
+                            var obj = this;
+
+                            obj.dd.on('click', function (event) {
+                                $(this).toggleClass('active');
+                                event.stopPropagation();
+                            });
+                        }
+                    }
+
+                    $(function () {
+
+                        var dd = new DropDown($('#dd'));
+
+                        $(document).click(function () {
+                            // all dropdowns
+                            $('.wrapper-dropdown-2').removeClass('active');
+                        });
+
+                    });</script>
+                <div class="clear"></div>
+            </div>
+            <div class="header_bottom">
+                @{Html.RenderAction("MainMenuTop", "Home"); } <!--("Tên action, tên controller")-->
+                <div class="search_box">
+                    <form action="/tim-kiem" method="get">
+                        <input type="text" id="txtKeyword" name="keyword" placeholder="Gõ từ khoá"><input type="submit" value="">
+                    </form>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+            @RenderSection("slide", required: false)
+        </div>
+        <div class="main">
+            @RenderBody()
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer22"> @{Html.RenderAction("MenuFooter2", "Home");}</div>
+
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });</script>
+    <a href="#" id="toTop"><span id="toTopHover"> </span></a>
+    @RenderSection("jsFooter", required: false)
+</body>
+</html>
+

@@ -1,0 +1,16 @@
+D:\MVC\ProjectMVC\Model\bin\Release\Model.dll.config
+D:\MVC\ProjectMVC\Model\bin\Release\Model.dll
+D:\MVC\ProjectMVC\Model\bin\Release\Model.pdb
+D:\MVC\ProjectMVC\Model\bin\Release\EntityFramework.dll
+D:\MVC\ProjectMVC\Model\bin\Release\EntityFramework.SqlServer.dll
+D:\MVC\ProjectMVC\Model\bin\Release\PagedList.dll
+D:\MVC\ProjectMVC\Model\bin\Release\PagedList.Mvc.dll
+D:\MVC\ProjectMVC\Model\bin\Release\EntityFramework.xml
+D:\MVC\ProjectMVC\Model\bin\Release\EntityFramework.SqlServer.xml
+D:\MVC\ProjectMVC\Model\bin\Release\PagedList.xml
+D:\MVC\ProjectMVC\Model\bin\Release\PagedList.Mvc.xml
+D:\MVC\ProjectMVC\Model\obj\Release\Model.csprojAssemblyReference.cache
+D:\MVC\ProjectMVC\Model\obj\Release\Model.csproj.CoreCompileInputs.cache
+D:\MVC\ProjectMVC\Model\obj\Release\Model.csproj.CopyComplete
+D:\MVC\ProjectMVC\Model\obj\Release\Model.dll
+D:\MVC\ProjectMVC\Model\obj\Release\Model.pdb

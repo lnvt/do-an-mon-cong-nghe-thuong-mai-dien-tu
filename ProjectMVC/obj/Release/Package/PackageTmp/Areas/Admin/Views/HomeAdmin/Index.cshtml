@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var session = (ProjectMVC.Common.UserLogin)Session[ProjectMVC.Common.CommonConstants.USER_SESSION];
+}
+@section header
+{
+    <h2>Thông tin tài khoản đăng nhập</h2>
+}
+
+<hr />
+<p style="font-size:30px;font-weight:bold">Số ID tài khoản: @session.UserID</p>
+<p style="font-size:30px;font-weight:bold">Tên tài khoản: @session.UserName</p>
+<p style="font-size:30px;font-weight:bold">Mật khẩu: @session.Password</p>
+<p style="font-size:30px;font-weight:bold">Email: @session.Email</p>
+<p style="font-size:30px;font-weight:bold">Địa chỉ: @session.Address</p>
+<p style="font-size:30px;font-weight:bold">Số điện thoại: @session.Phone</p>
+
+ 
+
+
+
+

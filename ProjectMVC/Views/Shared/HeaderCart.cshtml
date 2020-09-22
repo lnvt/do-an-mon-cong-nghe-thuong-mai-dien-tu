@@ -1,0 +1,33 @@
+﻿@model List<ProjectMVC.Models.CartItem>
+<div class="cart">
+    @{ 
+        var session =(ProjectMVC.Common.UserLogin) Session[ProjectMVC.Common.CommonConstants.USER_SESSION];
+       
+    }
+    <p>
+        @if (Session[ProjectMVC.Common.CommonConstants.USER_SESSION] == null)
+        {
+            @*<span>Cart:</span><div id="dd" class="wrapper-dropdown-2">
+                @Model.Count  - @(Model.Sum(x => x.Product.Price * x.Quantity))
+                <ul class="dropdown">
+                    <li>you have no items in your Shopping cart</li>
+                </ul>
+            </div>*@
+        }
+        else
+        {
+            <ul>
+                <li>Xin chào: @session.UserName </li>
+                <li>@Html.ActionLink("Thoát", "Logout","User")</li>
+            </ul>
+            <span>Cart:</span><div id="dd" class="wrapper-dropdown-2">
+                @Model.Count  - @(Model.Sum(x => x.Product.Price * x.Quantity))
+                <ul class="dropdown">
+                    <li>you have no items in your Shopping cart</li>
+                </ul>
+            </div>
+
+        }
+
+    </p>
+</div>
